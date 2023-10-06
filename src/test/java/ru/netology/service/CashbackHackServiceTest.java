@@ -21,4 +21,12 @@ public class CashbackHackServiceTest {
         int actual = service.remain(2000);
         assertEquals(actual, expected);
     }
+
+    @Test
+    public void testRemainAboveBoundaryAmount() {
+        CashbackHackService service = new CashbackHackService();
+        int expected = 200;
+        int actual = service.remain(2800);
+        assertEquals(expected, actual);
+    }
 }
