@@ -7,10 +7,10 @@ import static org.junit.Assert.*;
 public class CashbackHackServiceTest {
 
     @Test
-    public void testRemainNotBoundaryAmount() {
+    public void testRemainBelowBoundaryAmount() {
         CashbackHackService service = new CashbackHackService();
         int expected = 200;
-        int actual = service.remain(2800);
+        int actual = service.remain(800);
         assertEquals(expected, actual);
     }
 
