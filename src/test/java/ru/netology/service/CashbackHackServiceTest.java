@@ -7,11 +7,11 @@ import static org.testng.Assert.*;
 public class CashbackHackServiceTest {
 
     @Test
-    public void testRemainNotBoundaryAmount() {
-       CashbackHackService service = new CashbackHackService();
-       int expected = 200;
-       int actual = service.remain(2800);
-       assertEquals(actual, expected);
+    public void testRemainBelowBoundaryAmount() {
+        CashbackHackService service = new CashbackHackService();
+        int expected = 200;
+        int actual = service.remain(800);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -19,7 +19,7 @@ public class CashbackHackServiceTest {
         CashbackHackService service = new CashbackHackService();
         int expected = 0;
         int actual = service.remain(2000);
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
     @Test
